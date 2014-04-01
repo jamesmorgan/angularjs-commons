@@ -31,38 +31,98 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Angular Commons Samples</a>
         </div>
-        <div class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right" role="form">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-        </div><!--/.navbar-collapse -->
     </div>
 </div>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+        <h1>Angular Commons Collections</h1>
+        <p>Below are is a selction a common filters, directives, services and utilities all of which commonly get re-created.</p>
+        <!--<p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>-->
     </div>
 </div>
 
-<div class="container">
+<div class="container" ng-controller="MainCtrl as mc" ng-cloak>
+
+    <div class="page-header">
+        <h1>Filters <small>common filters for any application</small></h1>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Capitalise</h2>
+            <p>
+                Example:
+                <div><input type="text" ng-model="mc.capitalised.value" />  {{ mc.capitalised.value | capitalise }}</div>
+            </p>
+            <p>
+                Usage:
+                <div hljs>{{ myText | capitalise }}</div>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Truncate</h2>
+            <p>
+                Example:
+                <div><input type="text" ng-model="mc.truncate.value" />  {{ mc.truncate.value  | truncate:10 }}</div>
+            </p>
+            <p>
+                Usage:
+            <div hljs>{{ myText | truncate:25:"..." }}</div>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>To Lower</h2>
+            <p>
+                Example:
+            <div><input type="text" ng-model="mc.toLower.value" />  {{ mc.toLower.value  | toLower }}</div>
+            </p>
+            <p>
+                Usage:
+            <div hljs>{{ myText | toLower }}</div>
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>To Upper</h2>
+            <p>
+                Example:
+            <div><input type="text" ng-model="mc.toUpper.value" />  {{ mc.toUpper.value  | toUpper }}</div>
+            </p>
+            <p>
+                Usage:
+            <div hljs>{{ myText | toUpper }}</div>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>To Camel Case</h2>
+            <p>
+                Example:
+            <div><input type="text" ng-model="mc.toCamel.value" />  {{ mc.toCamel.value  | toCamel }}</div>
+            </p>
+            <p>
+                Usage:
+            <div hljs>{{ myText | toCamel }}</div>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    </div>
+
+    <hr>
+
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
@@ -88,28 +148,7 @@
     <div class="row">
         <div class="col-md-4">
             <h2>Heading</h2>
-            <p>
-
-                <div hljs>
-                    {% if articles|length %}
-                    {% for article in articles %}
-
-                    {# Striped table #}
-                    <tr class="{% cycle odd,even %}">
-                        <td>{{ article|default:"Hi... "|escape }}</td>
-                        <td {% if article.today %}class="today"{% endif %}>{{ article.date|date:"d.m.Y" }}</td>
-                    </tr>
-
-                    {% endfor %}
-                    {% endif %}
-
-                    {% comment %}
-                    Comments may be long and
-                    multiline.
-                    {% endcomment %}
-                </div>
-
-            </p>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
@@ -164,12 +203,21 @@
 <script src="../bower_components/highlightjs/highlight.pack.js"></script>
 
 <script src="js/app.js"></script>
+
+<!-- Controllers -->
+<script src="js/javascript/controllers/MainCtrl.js"></script>
+
+<!-- Filters -->
+<script src="js/javascript/filters/capitalise.js"></script>
+<script src="js/javascript/filters/truncate.js"></script>
+<script src="js/javascript/filters/toLower.js"></script>
+<script src="js/javascript/filters/toUpper.js"></script>
+<script src="js/javascript/filters/toCamel.js"></script>
+
 <!--<script src="js/services.js"></script>-->
 <!--<script src="js/controllers.js"></script>-->
 <!--<script src="js/filters.js"></script>-->
 <!--<script src="js/directives.js"></script>-->
-
-<script src="js/javascript/directives/prettifyDirective.js"></script>
 
 </body>
 </html>
