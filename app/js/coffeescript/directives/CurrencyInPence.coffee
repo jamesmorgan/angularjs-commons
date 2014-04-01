@@ -12,10 +12,16 @@ directivesModule.directive('currencyInPence', ($log, $filter) ->
         link: (scope, elm, attrs, ctrl) ->
 
             @penceToPound = (value) ->
-                (value / 100).toFixed(2)
+                if (value != undefined)
+                    (parseFloat(value) / 100).toFixed(2)
+                else
+                    0
 
             @poundsToPence = (value) ->
-                value * 100
+                if (value != undefined)
+                    parseFloat(value) * 100
+                else
+                    0
 
             ###
             # The $parsers pipeline converts the $viewValue into the $modelValue -> http://docs.angularjs.org/api/ng/type/ngModel.NgModelController#$parsers
@@ -28,16 +34,13 @@ directivesModule.directive('currencyInPence', ($log, $filter) ->
 
                 ## Validate the viewValue to ensure valid currency
                 if CURRENCY_REGEXP.test(viewValue)
-
                     ctrl.$setValidity('currency', true) ## Set to be valid once its passed RegEx
                     @poundsToPence(viewValue) ## Convert pounds to pence
 
                 else if viewValue is ''
-
                     ctrl.$setValidity('currency', false) # Set Invalid when blank
                     0 ## Convert blank string to 0 for consistancy
                 else
-
                     ctrl.$setValidity('currency', false) # Set Validity when invalid
                     undefined ## return undefined (no model update)
             )

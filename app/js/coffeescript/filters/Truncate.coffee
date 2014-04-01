@@ -9,8 +9,12 @@
 ###
 filtersModule.filter('truncate', () ->
         (text, length, end) ->
-            if !end then end = '...'
-            if !text then return ''
+
+            if !end then end = "..."
+
+            if !text then return ""
+
             if text.length <= length or (text.length - end.length <= length) then return text
+
             "#{text}".substring(0, length-end.length) + end
     )

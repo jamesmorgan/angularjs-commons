@@ -24,9 +24,15 @@ directivesModule.directive('hasRole', ($log, UserModel, I18nResourceService) ->
                     # unauthenticated - do nothing; keep hidden!
                     return if not UserModel.authenticatedUser
 
+                    # resources must be loaded
+                    return $log.error("AllowedRoles not found!") if not allowedRoles?.length
+
+                    # must pass a valid string
+                    return $log.error("Attribute value invalid #{attrs.hasRole}") if not attrs.hasRole?.length
+
                     roles = if attrs.hasRole.match(/\[(.*?)\]/) then eval(attrs.hasRole) else [attrs.hasRole]
 
-                    $log.error("Unknown role #{role}") for role in roles when not (role in allowedRoles)
+                    return $log.error("Unknown role #{role}") for role in roles when not (role in allowedRoles)
 
                     if UserModel.authenticatedUser.role in roles
                         elm.removeClass("ng-hide");

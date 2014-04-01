@@ -10,7 +10,7 @@ directivesModule.directive('passwordValidate', ($log, $filter) ->
             # More than 7 chars
             pwdValidLength = (viewValue && viewValue.length >= 8) ? 'valid': undefined
             # Must contain at least one non alphabetic character
-            pwdComplexity = (viewValue && /[A-z]+(\W|[0-9]|_)+/.test(viewValue)) ? 'valid': undefined
+            pwdComplexity = (viewValue && /(?=.*(\W|[0-9]|_))(?=.*[A-z])/.test(viewValue)) ? 'valid': undefined
 
             if pwdValidLength && pwdComplexity
                 ctrl.$setValidity('password', true)
@@ -18,7 +18,6 @@ directivesModule.directive('passwordValidate', ($log, $filter) ->
             else
                 ctrl.$setValidity('password', false)
                 undefined
-
         )
 
         ## Runs when the model gets updated on the scope directly and keeps our view in sync
