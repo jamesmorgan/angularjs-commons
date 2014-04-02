@@ -4,7 +4,7 @@
 directivesModule.directive('passwordValidate', ($log, $filter) ->
     {
     restrict: 'A',  ## Only use on attributes
-    require: 'ngModel',  ## Must have a ngModel
+    require: '^ngModel',  ## Must have a ngModel
     link: (scope, elm, attrs, ctrl) ->
         ctrl.$parsers.unshift((viewValue) =>
             # More than 7 chars

@@ -14,6 +14,9 @@
     <!-- Bootstrap core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.min.css">
+
     <!-- personal preference: github theme -->
     <link rel="stylesheet" href="../bower_components/highlightjs/styles/github.css">
 
@@ -115,25 +118,53 @@
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+            <h2>Slice</h2>
+            <p>
+                Example:
+            <div><input type="number" ng-model="mc.slice.to" min="0" max="5" />  {{ mc.slice.value  | slice:0:mc.slice.to }}</div>
+            </p>
+            <p>
+                Usage:
+            <div hljs> {{ mc.slice.value  | slice:0:2 }}}</div>
+            </p>        </div>
     </div>
 
     <hr>
 
+    <div class="page-header">
+        <h1>Directives <small>common directives for any application</small></h1>
+    </div>
+
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2>Password Strength</h2>
+            <p>Example: <strong>1 x Uppercase character</strong> and <strong>1 x number</strong> and <strong> 8 or more characters</strong></p>
+            <p>Current Password: {{ mc.password.value }}</p>
+            <p>
+                <form name="passwordForm">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        <input class="form-control" type="password" placeholder="Password" name="password_directive_input"
+                               ng-model="mc.password.value" required password-validate />
+                    </div>
+                </form>
+                errors: {{ passwordForm.$error | json }}
+            </p>
+            <p>
+                <span ng-show="!passwordForm.$error.password_directive_input">
+                    <i class="fa fa-thumbs-up"></i> Good Password
+                </span>
+                <span ng-show="passwordForm.$error.password_directive_input">
+                    <i class="fa fa-thumbs-down"></i> Bad Password
+                </span>
+            </p>
+            <div hljs><input type="password" ng-model="model.password" password-validate /></div>
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2></h2>
+            <p></p>
+            <p></p>
         </div>
         <div class="col-md-4">
             <h2>Heading</h2>
@@ -213,6 +244,7 @@
 <script src="js/javascript/filters/toLower.js"></script>
 <script src="js/javascript/filters/toUpper.js"></script>
 <script src="js/javascript/filters/toCamel.js"></script>
+<script src="js/javascript/filters/slice.js"></script>
 
 <!--<script src="js/services.js"></script>-->
 <!--<script src="js/controllers.js"></script>-->
