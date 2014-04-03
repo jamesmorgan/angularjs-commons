@@ -3,7 +3,7 @@
 /**
  * Validates a password field, to ensure more then 7 chars and contain at least one non alphabetic character.
  */
-directivesModule.directive('passwordStrength', function ($log, $filter) {
+directivesModule.directive('passwordStrength', function ($log) {
     return {
         restrict: 'A',
         require: '^ngModel',

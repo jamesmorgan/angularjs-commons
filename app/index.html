@@ -147,8 +147,7 @@
                 <form name="passwordForm">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                        <input class="form-control" type="password" placeholder="Password" name="password_directive_input"
-                               ng-model="mc.password.value" password-strength />
+                        <input class="form-control" type="password" placeholder="Password" ng-model="mc.password.value" password-strength />
                     </div>
                 </form>
             </p>
@@ -163,9 +162,28 @@
             <div hljs language="html"><input type="password" ng-model="model.password" password-strength /></div>
         </div>
         <div class="col-md-4">
-            <h2></h2>
-            <p></p>
-            <p></p>
+            <h2>Username Unique</h2>
+            <p>Validates against: <code>{{mc.uniqueUsername.staticUsers}}</code>
+            <p>
+                <pre>{{ mc.uniqueUsername.value }}</pre>
+            </p>
+            <p>
+                <form name="uniqueUsernameForm">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input class="form-control" type="text" ng-model="mc.uniqueUsername.value" unique-username />
+                    </div>
+                </form>
+            </p>
+            <p>
+                <span ng-show="uniqueUsernameForm.$error.unique_username">
+                    <i class="glyphicon glyphicon-ok"></i> Unique
+                </span>
+                <span ng-show="!uniqueUsernameForm.$error.unique_username">
+                    <i class="glyphicon glyphicon-remove"></i> Duplicate
+                </span>
+            </p>
+            <div hljs language="html"><input class="form-control" type="text" ng-model="model.username" unique-username /></div>
         </div>
         <div class="col-md-4">
             <h2>Heading</h2>
@@ -239,6 +257,9 @@
 <!-- Controllers -->
 <script src="js/javascript/controllers/MainCtrl.js"></script>
 
+<!-- Services -->
+<script src="js/javascript/services/UserService.js"></script>
+
 <!-- Filters -->
 <script src="js/javascript/filters/capitalise.js"></script>
 <script src="js/javascript/filters/truncate.js"></script>
@@ -249,6 +270,7 @@
 
 <!-- Directives -->
 <script src="js/javascript/directives/PasswordStrength.js"></script>
+<script src="js/javascript/directives/UniqueUsername.js"></script>
 
 </body>
 </html>

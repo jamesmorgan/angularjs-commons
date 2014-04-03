@@ -3,7 +3,7 @@
 /**
  *
  */
-controllersModule.controller('MainCtrl', [function() {
+controllersModule.controller('MainCtrl', ['UserService', function (UserService) {
 
     //noinspection JSUnusedGlobalSymbols
     this.capitalised = { value : 'aNy oLD sTrInG'};
@@ -21,5 +21,11 @@ controllersModule.controller('MainCtrl', [function() {
 
     //noinspection JSUnusedGlobalSymbols
     this.password = { value : "pa33worD" };
+
+    //noinspection JSUnusedGlobalSymbols
+    this.uniqueUsername = {
+        staticUsers : UserService.staticUsers(),
+        value : "jimmy"
+    };
 
 }]);
