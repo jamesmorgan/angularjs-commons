@@ -139,27 +139,28 @@
     <div class="row">
         <div class="col-md-4">
             <h2>Password Strength</h2>
-            <p>Example: <strong>1 x Uppercase character</strong> and <strong>1 x number</strong> and <strong> 8 or more characters</strong></p>
-            <p>Current Password: {{ mc.password.value }}</p>
+            <p>Atleast <strong>1 x Uppercase</strong> and <strong>1 x Number</strong></p>
+            <p>
+                <pre>{{ mc.password.value }}</pre>
+            </p>
             <p>
                 <form name="passwordForm">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-key"></i></span>
                         <input class="form-control" type="password" placeholder="Password" name="password_directive_input"
-                               ng-model="mc.password.value" required password-validate />
+                               ng-model="mc.password.value" password-strength />
                     </div>
                 </form>
-                errors: {{ passwordForm.$error | json }}
             </p>
             <p>
-                <span ng-show="!passwordForm.$error.password_directive_input">
+                <span ng-show="!passwordForm.$error.password_strength">
                     <i class="fa fa-thumbs-up"></i> Good Password
                 </span>
-                <span ng-show="passwordForm.$error.password_directive_input">
+                <span ng-show="passwordForm.$error.password_strength">
                     <i class="fa fa-thumbs-down"></i> Bad Password
                 </span>
             </p>
-            <div hljs><input type="password" ng-model="model.password" password-validate /></div>
+            <div hljs language="html"><input type="password" ng-model="model.password" password-strength /></div>
         </div>
         <div class="col-md-4">
             <h2></h2>
@@ -246,10 +247,8 @@
 <script src="js/javascript/filters/toCamel.js"></script>
 <script src="js/javascript/filters/slice.js"></script>
 
-<!--<script src="js/services.js"></script>-->
-<!--<script src="js/controllers.js"></script>-->
-<!--<script src="js/filters.js"></script>-->
-<!--<script src="js/directives.js"></script>-->
+<!-- Directives -->
+<script src="js/javascript/directives/PasswordStrength.js"></script>
 
 </body>
 </html>
