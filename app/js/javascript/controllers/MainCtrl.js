@@ -20,7 +20,6 @@ controllersModule.controller('MainCtrl', ['UserService', function (UserService) 
     //noinspection JSUnusedGlobalSymbols
     this.cleanAndCapitalised = { value : '_aNy_oLD_sTrInG_'};
 
-
     //noinspection JSUnusedGlobalSymbols
     this.password = { value : "pa33worD" };
 
@@ -29,5 +28,8 @@ controllersModule.controller('MainCtrl', ['UserService', function (UserService) 
         staticUsers : UserService.staticUsers(),
         value : "jimmy"
     };
+
+    //noinspection JSUnusedGlobalSymbols
+    this.characterCount = { value : "The quick brown fox jumps over the lazy dog" };
 
 }]);
