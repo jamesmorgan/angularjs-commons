@@ -17,6 +17,8 @@ controllersModule.controller('MainCtrl', ['UserService', function (UserService) 
     this.toCamel = { value : 'aNy-oLd-sTrInG'};
     //noinspection JSUnusedGlobalSymbols
     this.slice = { value : [1, 2, 3, 4, 5], to: 3 };
+    //noinspection JSUnusedGlobalSymbols
+    this.cleanAndCapitalised = { value : '_aNy_oLD_sTrInG_'};
 
 
     //noinspection JSUnusedGlobalSymbols

@@ -125,8 +125,38 @@
             </p>
             <p>
                 Usage:
-            <div hljs> {{ mc.slice.value  | slice:0:2 }}}</div>
-            </p>        </div>
+                <div hljs> {{ mc.slice.value  | slice:0:2 }}</div>
+            </p>
+        </div>
+    </div>
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Clean & Capitalise</h2>
+            <p>Useful for converting ENUM values</p>
+            <p>
+                Example:
+                <div><input type="text" ng-model="mc.cleanAndCapitalised.value" />  {{ mc.cleanAndCapitalised.value | cleanAndCapitalise }}</div>
+            </p>
+            <p>
+                Usage:
+                <div hljs> {{ myText | cleanAndCapitalise }}</div>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2></h2>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <div class="col-md-4">
+            <h2></h2>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
     </div>
 
     <hr>
@@ -183,12 +213,14 @@
                     <i class="glyphicon glyphicon-remove"></i> Duplicate
                 </span>
             </p>
-            <div hljs language="html"><input class="form-control" type="text" ng-model="model.username" unique-username /></div>
+            <div hljs language="html"><input type="text" ng-model="model.username" unique-username /></div>
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2>Auto Populate</h2>
+            <p>Auto populates auto saved data</p>
+            <p></p>
+            <p></p>
+            <p></p>
         </div>
     </div>
 
@@ -262,6 +294,7 @@
 
 <!-- Filters -->
 <script src="js/javascript/filters/capitalise.js"></script>
+<script src="js/javascript/filters/cleanAndCapitalise.js"></script>
 <script src="js/javascript/filters/truncate.js"></script>
 <script src="js/javascript/filters/toLower.js"></script>
 <script src="js/javascript/filters/toUpper.js"></script>
