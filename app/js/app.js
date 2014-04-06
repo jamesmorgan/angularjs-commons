@@ -8,7 +8,8 @@ var MODULES = [
     'myApp.filters',
     'myApp.services',
     'myApp.directives',
-    'myApp.controllers'
+    'myApp.controllers',
+    'myApp.decorators.errorHandler'
 ];
 
 var myApp = angular.module('myApp', [].concat(DEPENDENCIES).concat(MODULES));
@@ -24,3 +25,4 @@ var filtersModule = angular.module('myApp.filters', []);
 var servicesModule = angular.module('myApp.services', []);
 var directivesModule = angular.module('myApp.directives', []);
 var controllersModule = angular.module('myApp.controllers', []);
+var errorHandler = angular.module('myApp.decorators.errorHandler', []);

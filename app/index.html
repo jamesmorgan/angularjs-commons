@@ -201,7 +201,7 @@
                 <form name="uniqueUsernameForm">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input class="form-control" type="text" ng-model="mc.uniqueUsername.value" unique-username />
+                        <input class="form-control" type="text" placeholder="Username" ng-model="mc.uniqueUsername.value" unique-username />
                     </div>
                 </form>
             </p>
@@ -228,6 +228,7 @@
 
     <!-- Example row of columns -->
     <div class="row">
+
         <div class="col-md-4">
             <h2>Character Count</h2>
             <p>Visually inform users as they type</p>
@@ -241,11 +242,13 @@
 <character-count count="20" field="model.value"></character-count>
             </div>
         </div>
+
         <div class="col-md-4">
             <h2></h2>
             <p></p>
             <p></p>
         </div>
+
         <div class="col-md-4">
             <h2></h2>
             <p></p>
@@ -255,12 +258,25 @@
 
     <hr>
 
+    <div class="page-header">
+        <h1>Decorators <small>common decorators most developers will end up making</small></h1>
+    </div>
+
+
+
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
-            <h2></h2>
-            <p></p>
-            <p></p>
+            <h2>Global Error Handler</h2>
+            <p>Useful for logging errors server side in something like splunk/loggerly</p>
+            <p>
+                <button type="button" class="btn btn-primary btn-lg active" ng-click="mc.triggerError()">Trigger Error</button>
+                Total Errors Logged : {{ mc.errorHandler.errors.length }}
+            </p>
+            <p>Open the console to view the error</p>
+            <div hljs language="html">
+
+            </div>
         </div>
         <div class="col-md-4">
             <h2></h2>
@@ -339,6 +355,7 @@
 
 <!-- Services -->
 <script src="js/javascript/services/UserService.js"></script>
+<script src="js/javascript/services/TestErrorHandlingService.js"></script>
 
 <!-- Filters -->
 <script src="js/javascript/filters/capitalise.js"></script>
@@ -353,6 +370,9 @@
 <script src="js/javascript/directives/PasswordStrength.js"></script>
 <script src="js/javascript/directives/UniqueUsername.js"></script>
 <script src="js/javascript/directives/CharacterCount.js"></script>
+
+<!-- Decorators -->
+<script src="js/javascript/decorators/exceptionHandler.js"></script>
 
 </body>
 </html>

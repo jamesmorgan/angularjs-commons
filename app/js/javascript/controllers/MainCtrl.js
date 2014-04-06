@@ -3,7 +3,11 @@
 /**
  *
  */
-controllersModule.controller('MainCtrl', ['UserService', function (UserService) {
+controllersModule.controller('MainCtrl', ['UserService', 'TestErrorHandlingService',  function (UserService, TestErrorHandlingService) {
+
+    /***********
+     * Filters *
+     ***********/
 
     //noinspection JSUnusedGlobalSymbols
     this.capitalised = { value : 'aNy oLD sTrInG'};
@@ -20,6 +24,10 @@ controllersModule.controller('MainCtrl', ['UserService', function (UserService) 
     //noinspection JSUnusedGlobalSymbols
     this.cleanAndCapitalised = { value : '_aNy_oLD_sTrInG_'};
 
+    /**************
+     * Directives *
+     **************/
+
     //noinspection JSUnusedGlobalSymbols
     this.password = { value : "pa33worD" };
 
@@ -31,5 +39,16 @@ controllersModule.controller('MainCtrl', ['UserService', function (UserService) 
 
     //noinspection JSUnusedGlobalSymbols
     this.characterCount = { value : "The quick brown fox jumps over the lazy dog" };
+
+    /**************
+     * Decorators *
+     **************/
+
+    //noinspection JSUnusedGlobalSymbols
+    this.errorHandler = { errors : TestErrorHandlingService.errors };
+
+    this.triggerError = function () {
+        UserService.throwError(TestErrorHandlingService.errors.length);
+    };
 
 }]);
