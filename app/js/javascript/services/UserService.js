@@ -8,7 +8,7 @@ servicesModule.service('UserService', function ($q) {
 
     this.checkUniqueUsername = function (username) {
         var deferred = $q.defer();
-        deferred.resolve((STATIC_USERS.indexOf(username) != -1));
+        deferred.resolve((STATIC_USERS.indexOf(username) !== -1));
         return deferred.promise;
     };
 
@@ -17,8 +17,7 @@ servicesModule.service('UserService', function ($q) {
     };
 
     this.throwError = function (count) {
-        throw new Error(" TEST ERROR TRIGGERED \n" +
-                        " Error count [" + count + "]");
+        throw new Error(" TEST ERROR TRIGGERED \n Error count [" + count + "]");
     };
 
 });

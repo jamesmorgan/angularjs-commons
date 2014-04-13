@@ -3,7 +3,8 @@
 /**
  *
  */
-controllersModule.controller('MainCtrl', ['UserService', 'TestErrorHandlingService',  function (UserService, TestErrorHandlingService) {
+controllersModule.controller('MainCtrl',
+    ['UserService', 'TestErrorHandlingService', 'TestHttpService', function (UserService, TestErrorHandlingService, TestHttpService) {
 
     /***********
      * Filters *
@@ -23,6 +24,8 @@ controllersModule.controller('MainCtrl', ['UserService', 'TestErrorHandlingServi
     this.slice = { value : [1, 2, 3, 4, 5], to: 3 };
     //noinspection JSUnusedGlobalSymbols
     this.cleanAndCapitalised = { value : '_aNy_oLD_sTrInG_'};
+    //noinspection JSUnusedGlobalSymbols
+    this.reverse = { value : ['1', '2', '3', '4', '5']};
 
     /**************
      * Directives *
@@ -40,6 +43,9 @@ controllersModule.controller('MainCtrl', ['UserService', 'TestErrorHandlingServi
     //noinspection JSUnusedGlobalSymbols
     this.characterCount = { value : "The quick brown fox jumps over the lazy dog" };
 
+    //noinspection JSUnusedGlobalSymbols
+    this.currencyInPence = { pence : "1999" };
+
     /**************
      * Decorators *
      **************/
@@ -50,5 +56,11 @@ controllersModule.controller('MainCtrl', ['UserService', 'TestErrorHandlingServi
     this.triggerError = function () {
         UserService.throwError(TestErrorHandlingService.errors.length);
     };
+
+    /****************
+     * Interceptors *
+     ****************/
+
+    this.triggerHttpCall = function () { TestHttpService.getGoogle(); };
 
 }]);

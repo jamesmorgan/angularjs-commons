@@ -25,12 +25,8 @@ directivesModule.directive('characterCount', function ($log) {
                     scope.message = "characters left";
                 // The model value is valid
                 } else if (newValue !== undefined) {
-                    scope.remainingCount =
-                        (newValue.length >= attrs.count) ? 0
-                            : (attrs.count - newValue.length);
-                    scope.message =
-                        ((attrs.count - newValue.length) === 1) ? 'character left'
-                            : 'characters left';
+                    scope.remainingCount    = (newValue.length >= attrs.count) ? 0 : (attrs.count - newValue.length);
+                    scope.message           = ((attrs.count - newValue.length) === 1) ? 'character left' : 'characters left';
                     // Default we don't have a model value yet
                 } else {
                     scope.remainingCount = attrs.count;

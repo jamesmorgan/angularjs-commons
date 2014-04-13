@@ -1,4 +1,5 @@
-filtersModule
+'use strict';
+
 var DEPENDENCIES = [
     'ngRoute',
     'hljs'
@@ -9,7 +10,8 @@ var MODULES = [
     'myApp.services',
     'myApp.directives',
     'myApp.controllers',
-    'myApp.decorators.errorHandler'
+    'myApp.errorHandler',
+    'myApp.httpDecorator'
 ];
 
 var myApp = angular.module('myApp', [].concat(DEPENDENCIES).concat(MODULES));
@@ -21,8 +23,14 @@ myApp.config(function (hljsServiceProvider) {
     });
 });
 
+// This sets up the default http interceptor for the project
+myApp.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('LoggingHttpInterceptor');
+});
+
 var filtersModule = angular.module('myApp.filters', []);
 var servicesModule = angular.module('myApp.services', []);
 var directivesModule = angular.module('myApp.directives', []);
 var controllersModule = angular.module('myApp.controllers', []);
-var errorHandler = angular.module('myApp.decorators.errorHandler', []);
+var errorHandler = angular.module('myApp.errorHandler', []);
+var loggingHttpInterceptor = angular.module('myApp.httpDecorator', []);
