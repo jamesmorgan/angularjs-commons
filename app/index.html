@@ -42,8 +42,9 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Angular Commons Collections</h1>
-        <p>Below are is a selction a common filters, directives, services and utilities all of which commonly get re-created.</p>
+        <h1>Angular Commons Samples</h1>
+        <p>Below are is a selection a common filters, directives, services and utilities</p>
+        <p>All of the below popup in many projects and could be used a reference points/templates of further components</p>
         <!--<p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>-->
     </div>
 </div>
@@ -338,8 +339,163 @@
 
     <hr />
 
+    <div class="page-header">
+        <h1>Form Controls <small>a basic set of form control and feedback directives</small></h1>
+    </div>
+
+    <p>I've found the need to recreate form controls such as the one detailed here on a few occasions.</p>
+    <p>I prefer commonly making smaller more focused directives and combining these to provide a common and repeatable set of validation tools</p>
+
     <!-- Example row of columns -->
     <div class="row">
+
+        <div class="col-md-8">
+            <h4>Example Form</h4>
+
+            <form class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <label for="inputText3" class="col-sm-2 control-label">Text Box</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputText3" placeholder="Text...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email address...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputUrl" class="col-sm-2 control-label">Url</label>
+                    <div class="col-sm-10">
+                        <input type="url" class="form-control" id="inputUrl" placeholder="Type in a url...">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="inputNumber" class="col-sm-2 control-label">Number</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputNumber" placeholder="Type a number...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="textArea" class="col-sm-2 control-label">Text Area</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="3" id="textArea" placeholder="Fill in this area..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="optionsRadiosDog" class="col-sm-2 control-label">Radio Group</label>
+                    <div class="col-sm-10">
+                        <div class="col-sm-5">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadiosDog" value="dog">Dog
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadiosCat" value="cat">Cat
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadiosBird" value="bird">Bird
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadiosRabbit" value="rabbit">Rabbit
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkboxDog" class="col-sm-2 control-label">Check Boxes</label>
+                    <div class="col-sm-10">
+                        <div class="col-sm-5">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="checkboxDog" id="checkboxDog"> Dog
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="checkboxCat"> Cat
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="checkboxBird"> Bird
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="checkboxRabbit"> Rabbit
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="select" class="col-sm-2 control-label">Select</label>
+                    <div class="col-sm-10">
+                        <select id="select" class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="multiSelect" class="col-sm-2 control-label">Multi Select</label>
+                    <div class="col-sm-10">
+                        <select id="multiSelect" multiple class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2 control-label"></div>
+                    <div class="col-sm-10">
+                        <p>
+                            <button type="button" class="btn btn-default pull-right">Submit</button>
+                            <button type="button" class="btn btn-default">Reset</button>
+                            <button type="button" class="btn btn-default">Disable All</button>
+                        </p>
+                    </div>
+                </div>
+
+            </form>
+            <p></p>
+        </div>
+        <div class="col-md-4">
+            <h4>Breakdown</h4>
+            <p></p>
+            <p></p>
+        </div>
+
         <div class="col-md-4">
             <h2></h2>
             <p></p>
