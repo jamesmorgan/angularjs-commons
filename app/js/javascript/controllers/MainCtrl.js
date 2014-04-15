@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
 /**
  *
  */
-controllersModule.controller('MainCtrl',
-    ['UserService', 'TestErrorHandlingService', 'TestHttpService', function (UserService, TestErrorHandlingService, TestHttpService) {
+controllersModule.controller('MainCtrl', ['$log', 'UserService', 'TestErrorHandlingService', 'TestHttpService',
+    function ($log, UserService, TestErrorHandlingService, TestHttpService) {
 
     /***********
      * Filters *
@@ -62,5 +62,20 @@ controllersModule.controller('MainCtrl',
      ****************/
 
     this.triggerHttpCall = function () { TestHttpService.getGoogle(); };
+
+    /**************
+     * Basic Form *
+     **************/
+    this.basicFormSubmit = function () {
+        $log.info('Basic form SUBMIT');
+    };
+
+    this.basicFormReset = function () {
+        $log.info('Basic form RESET');
+    };
+
+    this.basicForm = {
+        textArea: ""
+    };
 
 }]);
