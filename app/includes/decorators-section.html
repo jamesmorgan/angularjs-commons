@@ -1,0 +1,24 @@
+
+<!-- Example row of columns -->
+<div class="row">
+    <div class="col-md-4">
+        <h2>Global Error Handler</h2>
+        <p>Useful for logging errors server side in something like splunk/loggerly</p>
+        <p>
+            <button type="button" class="btn btn-primary btn active" ng-click="mc.triggerError()">Trigger Error</button>
+            Total Errors Logged : {{ mc.errorHandler.errors.length }}
+        </p>
+        <p>Open the console to view the error</p>
+        <p><pre class="mini-pre">{{mc.errorHandler.errors[mc.errorHandler.errors.length-1]}}</pre></p>
+    </div>
+    <div class="col-md-4">
+        <h2></h2>
+        <p></p>
+        <p></p>
+    </div>
+    <div class="col-md-4">
+        <h2></h2>
+        <p></p>
+        <p></p>
+    </div>
+</div>

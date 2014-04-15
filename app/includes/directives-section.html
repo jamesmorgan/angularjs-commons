@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-md-4">
+        <h2>Password Strength</h2>
+        <p>Atleast <strong>1 x Uppercase</strong> and <strong>1 x Number</strong></p>
+        <p>
+        <pre>{{ mc.password.value }}</pre>
+        </p>
+        <p>
+        <form name="passwordForm">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <input class="form-control" type="password" placeholder="Password" ng-model="mc.password.value" password-strength />
+            </div>
+        </form>
+        </p>
+        <p>
+                <span ng-show="!passwordForm.$error.password_strength">
+                    <i class="fa fa-thumbs-up"></i> Good Password
+                </span>
+                <span ng-show="passwordForm.$error.password_strength">
+                    <i class="fa fa-thumbs-down"></i> Bad Password
+                </span>
+        </p>
+        <div hljs language="html"><input type="password" ng-model="model.password" password-strength /></div>
+    </div>
+    <div class="col-md-4">
+        <h2>Username Unique</h2>
+        <p>Validates against: <code>{{mc.uniqueUsername.staticUsers}}</code>
+        <p>
+        <pre>{{ mc.uniqueUsername.value }}</pre>
+        </p>
+        <p>
+        <form name="uniqueUsernameForm">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input class="form-control" type="text" placeholder="Username" ng-model="mc.uniqueUsername.value" unique-username />
+            </div>
+        </form>
+        </p>
+        <p>
+                <span ng-show="uniqueUsernameForm.$error.unique_username">
+                    <i class="glyphicon glyphicon-ok"></i> Unique
+                </span>
+                <span ng-show="!uniqueUsernameForm.$error.unique_username">
+                    <i class="glyphicon glyphicon-remove"></i> Duplicate
+                </span>
+        </p>
+        <div hljs language="html"><input type="text" ng-model="model.username" unique-username /></div>
+    </div>
+    <div class="col-md-4">
+        <h2>Auto Populate</h2>
+        <p>Auto populates auto saved data</p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</div>
+
+<!-- Example row of columns -->
+<div class="row">
+
+    <div class="col-md-4">
+        <h2>Character Count</h2>
+        <p>Visually inform users as they type</p>
+        <p>
+            <textarea  class="form-control" ng-model="mc.characterCount.value" maxlength="100">
+            </textarea>
+            <character-count count="100" field="mc.characterCount.value"></character-count>
+        </p>
+        <div hljs language="html">
+            <input type="text" ng-model="model.value"/>
+            <character-count count="20" field="model.value"></character-count>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Currency In Pence</h2>
+        <p>Convert pence to pounds(£)</p>
+        <p>
+        <div class="input-group">
+            <span class="input-group-addon">£</span>
+            <input type="text" class="form-control" placeholder="pounds"
+                   ng-model="mc.currencyInPence.pence" currency-in-pence />
+        </div>
+        Model value in Pence:
+        <input class="form-control" ng-disabled="true" value="{{ mc.currencyInPence.pence }}"/>
+        </p>
+        <div hljs language="html">
+            <input type="number" ng-model="model.value" currency-in-pence/>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h2></h2>
+        <p></p>
+        <p></p>
+    </div>
+</div>

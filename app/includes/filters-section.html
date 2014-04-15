@@ -1,0 +1,109 @@
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Capitalise</h2>
+        <p>
+            Example:
+        <div><input type="text" ng-model="mc.capitalised.value" />  {{ mc.capitalised.value | capitalise }}</div>
+        </p>
+        <p>
+            Usage:
+        <div hljs>{{ myText | capitalise }}</div>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Truncate</h2>
+        <p>
+            Example:
+        <div><input type="text" ng-model="mc.truncate.value" />  {{ mc.truncate.value  | truncate:10 }}</div>
+        </p>
+        <p>
+            Usage:
+        <div hljs>{{ myText | truncate:25:"..." }}</div>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>To Lower</h2>
+        <p>
+            Example:
+        <div><input type="text" ng-model="mc.toLower.value" />  {{ mc.toLower.value  | toLower }}</div>
+        </p>
+        <p>
+            Usage:
+        <div hljs>{{ myText | toLower }}</div>
+        </p>
+    </div>
+</div>
+
+<hr>
+
+<!-- Example row of columns -->
+<div class="row">
+    <div class="col-md-4">
+        <h2>To Upper</h2>
+        <p>
+            Example:
+        <div><input type="text" ng-model="mc.toUpper.value" />  {{ mc.toUpper.value  | toUpper }}</div>
+        </p>
+        <p>
+            Usage:
+        <div hljs>{{ myText | toUpper }}</div>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>To Camel Case</h2>
+        <p>
+            Example:
+        <div><input type="text" ng-model="mc.toCamel.value" />  {{ mc.toCamel.value  | toCamel }}</div>
+        </p>
+        <p>
+            Usage:
+        <div hljs>{{ myText | toCamel }}</div>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Slice</h2>
+        <p>
+            Example:
+        <div><input type="number" ng-model="mc.slice.to" min="0" max="5" />  {{ mc.slice.value  | slice:0:mc.slice.to }}</div>
+        </p>
+        <p>
+            Usage:
+        <div hljs> {{ model.value  | slice:0:2 }}</div>
+        </p>
+    </div>
+</div>
+<!-- Example row of columns -->
+<div class="row">
+    <div class="col-md-4">
+        <h2>Clean & Capitalise</h2>
+        <p>Useful for converting ENUM values</p>
+        <p>
+            Example:
+        <div><input type="text" ng-model="mc.cleanAndCapitalised.value" />  {{ mc.cleanAndCapitalised.value | cleanAndCapitalise }}</div>
+        </p>
+        <p>
+            Usage:
+        <div hljs> {{ myText | cleanAndCapitalise }}</div>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Reverse</h2>
+        <p>Useful for changing UI logic without changing API</p>
+        <p>
+            Example:
+        <div><input type="text" ng-model="mc.reverse.value" ng-list />  {{ mc.reverse.value | reverse }}</div>
+        </p>
+        <p>
+            Usage:
+        <div hljs> {{ model.value | reverse }}</div>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2></h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</div>
