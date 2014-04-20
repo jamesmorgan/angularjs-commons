@@ -28,9 +28,10 @@ myApp.config(function ($httpProvider) {
     $httpProvider.interceptors.push('LoggingHttpInterceptor');
 });
 
+var configModule = angular.module('myApp.config', []);
 var filtersModule = angular.module('myApp.filters', []);
 var servicesModule = angular.module('myApp.services', []);
-var directivesModule = angular.module('myApp.directives', []);
+var directivesModule = angular.module('myApp.directives', ['myApp.config']);
 var controllersModule = angular.module('myApp.controllers', []);
 var errorHandler = angular.module('myApp.errorHandler', []);
 var loggingHttpInterceptor = angular.module('myApp.httpDecorator', []);
