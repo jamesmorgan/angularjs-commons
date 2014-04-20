@@ -67,33 +67,33 @@
             </textarea>
             <character-count count="100" field="mc.characterCount.value"></character-count>
         </p>
-        <div hljs language="html">
-            <input type="text" ng-model="model.value"/>
-            <character-count count="20" field="model.value"></character-count>
-        </div>
+        <div hljs language="html"><input type="text" ng-model="model.value"/><character-count count="20" field="model.value"></character-count></div>
     </div>
 
     <div class="col-md-4">
         <h2>Currency In Pence</h2>
         <p>Convert pence to pounds(£)</p>
         <p>
-        <div class="input-group">
-            <span class="input-group-addon">£</span>
-            <input type="text" class="form-control" placeholder="pounds"
-                   ng-model="mc.currencyInPence.pence" currency-in-pence />
-        </div>
-        Model value in Pence:
-        <input class="form-control" ng-disabled="true" value="{{ mc.currencyInPence.pence }}"/>
+            Model value in Pence:
+            <input class="form-control" ng-disabled="true" value="{{ mc.currencyInPence.pence }}"/>
         </p>
-        <div hljs language="html">
-            <input type="number" ng-model="model.value" currency-in-pence/>
-        </div>
+        <p>
+            <div class="input-group">
+                <span class="input-group-addon">£</span>
+                <input type="text" class="form-control" placeholder="pounds"
+                       ng-model="mc.currencyInPence.pence" currency-in-pence />
+            </div>
+        </p>
+        <div hljs language="html"><input type="number" ng-model="model.value" currency-in-pence/></div>
     </div>
 
     <div class="col-md-4">
         <h2>ngMinMax</h2>
         <p>Validate number input for min and max value entered</p>
         <p>Currently set to min <strong>-5</strong> and max <strong>5</strong></p>
+        <p>
+            <pre>{{ mc.ngMinMan.value }}</pre>
+        </p>
         <p>
             <form name="ngMinMax">
                 <input type="number" class="form-control" placeholder="number"
