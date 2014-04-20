@@ -4,14 +4,26 @@
 
     <div class="col-md-8">
         <h4>Example Form</h4>
-
         <form class="form-horizontal" role="form" id="basicForm" name="basicForm" novalidate>
+
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-default btn-sm"
+                            ng-click="showModelValue = !showModelValue">
+                        <span class="glyphicon glyphicon-chevron-{{showModelValue ? 'up' : 'down'}}"></span> Show Model
+                    </button>
+                </div>
+                <div class="col-sm-10">
+                    <pre ng-show="showModelValue">{{ mc.basicForm | json}}</pre>
+                </div>
+            </div>
 
             <div class="form-group" has-error="basicForm.inputText">
                 <label for="inputText" class="col-sm-2 control-label" is-required="basicForm.inputText">Text Box</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="inputText" name="inputText" placeholder="Text..."
-                           required>
+                           required
+                           ng-model="mc.basicForm.inputText">
                 </div>
                 <error-span for='basicForm.inputText' type="required"></error-span>
             </div>
@@ -21,7 +33,8 @@
                 <div class="col-sm-10">
                     <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email address..."
                            required
-                           ng-maxlength="100">
+                           ng-maxlength="100"
+                           ng-model="mc.basicForm.inputEmail">
                 </div>
                 <error-span for='basicForm.inputEmail' type="required"></error-span>
                 <error-span for='basicForm.inputEmail' type="email"></error-span>
@@ -32,7 +45,8 @@
                 <label for="inputUrl" class="col-sm-2 control-label" is-required="basicForm.inputUrl">Url</label>
                 <div class="col-sm-10">
                     <input type="url" class="form-control" id="inputUrl" name="inputUrl" placeholder="Type in a url..."
-                           required>
+                           required
+                           ng-model="mc.basicForm.inputUrl">
                 </div>
                 <error-span for='basicForm.inputUrl' type="required"></error-span>
                 <error-span for='basicForm.inputUrl' type="url"></error-span>
@@ -43,7 +57,8 @@
                 <label for="inputNumber" class="col-sm-2 control-label" is-required="basicForm.inputNumber">Number</label>
                 <div class="col-sm-10">
                     <input type="number" class="form-control" id="inputNumber" name="inputNumber" placeholder="Type a number..."
-                           required>
+                           required
+                           ng-model="mc.basicForm.inputNumber">
                 </div>
                 <error-span for='basicForm.inputNumber' type="required"></error-span>
                 <error-span for='basicForm.inputNumber' type="number"></error-span>
@@ -68,24 +83,28 @@
                     <div class="col-sm-5">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadiosDog" value="dog">Dog
+                                <input type="radio" name="optionsRadios" id="optionsRadiosDog" value="dog"
+                                       ng-model="mc.basicForm.optionsRadios">Dog
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadiosCat" value="cat">Cat
+                                <input type="radio" name="optionsRadios" id="optionsRadiosCat" value="cat"
+                                       ng-model="mc.basicForm.optionsRadios">Cat
                             </label>
                         </div>
                     </div>
                     <div class="col-sm-5">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadiosBird" value="bird">Bird
+                                <input type="radio" name="optionsRadios" id="optionsRadiosBird" value="bird"
+                                       ng-model="mc.basicForm.optionsRadios">Bird
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadiosRabbit" value="rabbit">Rabbit
+                                <input type="radio" name="optionsRadios" id="optionsRadiosRabbit" value="rabbit"
+                                       ng-model="mc.basicForm.optionsRadios">Rabbit
                             </label>
                         </div>
                     </div>
@@ -98,24 +117,28 @@
                     <div class="col-sm-5">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="checkboxDog" id="checkboxDog"> Dog
+                                <input type="checkbox" name="checkboxDog" value="checkboxDog" id="checkboxDog"
+                                       ng-model="mc.basicForm.checkboxes.dog"> Dog
                             </label>
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="checkboxCat"> Cat
+                                <input type="checkbox" name="checkboxCat" value="checkboxCat"
+                                       ng-model="mc.basicForm.checkboxes.cat"> Cat
                             </label>
                         </div>
                     </div>
                     <div class="col-sm-5">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="checkboxBird"> Bird
+                                <input type="checkbox" name="checkboxBird" value="checkboxBird"
+                                       ng-model="mc.basicForm.checkboxes.bird"> Bird
                             </label>
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="checkboxRabbit"> Rabbit
+                                <input type="checkbox" name="checkboxRabbit" value="checkboxRabbit"
+                                       ng-model="mc.basicForm.checkboxes.rabbit"> Rabbit
                             </label>
                         </div>
                     </div>
@@ -126,7 +149,8 @@
                 <label for="selectOnly" class="col-sm-2 control-label" is-required="basicForm.selectOnly">Select</label>
                 <div class="col-sm-10">
                     <select id="selectOnly" name="selectOnly" class="form-control"
-                            required>
+                            required
+                            ng-model="mc.basicForm.selectOnly">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -141,7 +165,8 @@
                 <label for="multiSelect" class="col-sm-2 control-label" is-required="basicForm.multiSelect">Multi Select</label>
                 <div class="col-sm-10">
                     <select id="multiSelect" name="multiSelect" class="form-control" multiple
-                            required>
+                            required
+                            ng-model="mc.basicForm.multiSelect">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
