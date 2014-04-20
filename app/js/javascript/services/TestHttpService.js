@@ -1,12 +1,14 @@
-'use strict';
+(function () {
+    "use strict";
 
-/**
- * A mock/test service
- */
-servicesModule.service('TestHttpService', function ($http, $q) {
+    /**
+     * A mock/test service
+     */
+    servicesModule.service('TestHttpService', function ($http, $q) {
 
-    this.getGoogle = function () {
-        $http.get("http://www.google.com");
-    };
+        this.getGoogle = function () {
+            $http.get("http://www.google.com");
+        };
 
-});
+    });
+})();
