@@ -91,8 +91,23 @@
     </div>
 
     <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-        <p></p>
+        <h2>ngMinMax</h2>
+        <p>Validate number input for min and max value entered</p>
+        <p>Currently set to min <strong>-5</strong> and max <strong>5</strong></p>
+        <p>
+            <form name="ngMinMax">
+                <input type="number" class="form-control" placeholder="number"
+                       ng-model="mc.ngMinMan.value" ng-min="-5" ng-max="5" />
+            </form>
+        </p>
+        <p>
+            <span ng-show="ngMinMax.$error.max">
+                <i class="glyphicon glyphicon-ban-circle"></i> Max Value Reached
+            </span>
+            <span ng-show="ngMinMax.$error.min">
+                <i class="glyphicon glyphicon-ban-circle"></i> Min Value Reached
+            </span>
+        </p>
+        <div hljs language="html"><input type="text" ng-model="model.numberVal" ng-min="-5" ng-max="5" /></div>
     </div>
 </div>

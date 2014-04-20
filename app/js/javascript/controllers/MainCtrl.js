@@ -32,7 +32,7 @@
              * Directives *
              **************/
 
-                //noinspection JSUnusedGlobalSymbols
+            //noinspection JSUnusedGlobalSymbols
             this.password = { value: "pa33worD" };
 
             //noinspection JSUnusedGlobalSymbols
@@ -46,6 +46,9 @@
 
             //noinspection JSUnusedGlobalSymbols
             this.currencyInPence = { pence: "1999" };
+
+            //noinspection JSUnusedGlobalSymbols
+            this.ngMinMan = { value: 0 };
 
             /**************
              * Decorators *
