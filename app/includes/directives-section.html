@@ -111,3 +111,68 @@
         <div hljs language="html"><input type="text" ng-model="model.numberVal" ng-min="-5" ng-max="5" /></div>
     </div>
 </div>
+
+
+<!-- Example row of columns -->
+<div class="row">
+
+    <div class="col-md-4">
+        <h2>Has Error</h2>
+        <p>Toggle error classes based on form field validation flags</p>
+        <p>
+            Useful for highlighting errors on a form sections i.e. marking it <abbr title="Adding class 'has-error' to the div">red!</abbr>
+        </p>
+        <p>
+            <pre>{{ mc.hasErrorTestForm.value }}</pre>
+        </p>
+        <p>
+            <form name="hasErrorTestForm">
+                <div class="form-group" has-error="hasErrorTestForm.inputUrl">
+                    <label for="inputUrl" class="col-sm-1 control-label">Url</label>
+                    <div class="col-sm-11">
+                        <input type="url" class="form-control" id="inputUrl" name="inputUrl" placeholder="Type in a url..."
+                               ng-model="mc.hasErrorTestForm.value">
+                    </div>
+                    <!--<div class="col-sm-11 col-sm-offset-1">-->
+                        <!--<span ng-show="hasErrorTestForm.$invalid">-->
+                            <!--<i class="glyphicon glyphicon-ban-circle"></i> Invalid URL-->
+                        <!--</span>-->
+                    <!--</div>-->
+                </div>
+            </form>
+        </p>
+        <p>
+            <div hljs language="html"><div class="form-group" has-error="form.fieldUrl"><input type="url" name="fieldUrl" id="fieldUrl" required></div></div>
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2></h2>
+        <p></p>
+        <p></p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <div hljs language="html">
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h2></h2>
+        <p></p>
+        <p></p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <div hljs language="html">
+
+        </div>
+    </div>
+</div>

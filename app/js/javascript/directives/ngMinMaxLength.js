@@ -1,8 +1,14 @@
 (function () {
     "use strict";
 
-    function isEmpty(value) {
-        return angular.isUndefined(value) || value === '' || value === null || value !== value;
+    /**
+     * Check value is present
+     *
+     * @param value the value to check
+     * @returns {boolean} true if the value is present
+     */
+    function hasValue(value) {
+        return value !== undefined && value !== '' && value !== null;
     }
 
     /**
@@ -16,20 +22,14 @@
 
                 var min = scope.$eval(attr.ngMin) || 0;
 
-                scope.$watch(attr.ngMin, function () {
-                    ctrl.$setViewValue(ctrl.$viewValue);
-                });
-
                 var minValidator = function (value) {
-                    if (!isEmpty(value) && value < min) {
+                    if (hasValue(value) && value < min) {
                         ctrl.$setValidity('min', false);
                         return undefined;
-                    } else {
-                        ctrl.$setValidity('min', true);
-                        return value;
                     }
+                    ctrl.$setValidity('min', true);
+                    return value;
                 };
-
                 ctrl.$parsers.push(minValidator);
                 ctrl.$formatters.push(minValidator);
             }
@@ -47,20 +47,14 @@
 
                 var max = scope.$eval(attr.ngMax) || Infinity;
 
-                scope.$watch(attr.ngMax, function () {
-                    ctrl.$setViewValue(ctrl.$viewValue);
-                });
-
                 var maxValidator = function (value) {
-                    if (!isEmpty(value) && value > max) {
+                    if (hasValue(value) && value > max) {
                         ctrl.$setValidity('max', false);
                         return undefined;
-                    } else {
-                        ctrl.$setValidity('max', true);
-                        return value;
                     }
+                    ctrl.$setValidity('max', true);
+                    return value;
                 };
-
                 ctrl.$parsers.push(maxValidator);
                 ctrl.$formatters.push(maxValidator);
             }

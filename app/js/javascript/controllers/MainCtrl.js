@@ -50,6 +50,9 @@
             //noinspection JSUnusedGlobalSymbols
             this.ngMinMan = { value: 0 };
 
+            //noinspection JSUnusedGlobalSymbols
+            this.hasErrorTestForm = { value: "http://wwww" };
+
             /**************
              * Decorators *
              **************/
