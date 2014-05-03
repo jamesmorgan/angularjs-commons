@@ -1,3 +1,3 @@
 #!/bin/sh
 
-karma start karma.conf.js
+karma start conf/karma.conf.js

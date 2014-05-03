@@ -76,7 +76,7 @@ module.exports = function (config) {
 
         // Configure the reporter
         coverageReporter: {
-            reporters:[
+            reporters: [
                 {
                     type: 'html',
                     dir: '/karma-reports/coverage/html/'
