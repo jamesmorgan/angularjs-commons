@@ -18,10 +18,10 @@ module.exports = function (config) {
             'bower_components/angular-mocks/angular-mocks.js',
 
             //Actual Files
-            'app/js/javascript/*',
+            'app/js/**/*.js',
 
             // Test Files
-            'app/test/unit/**/*'
+            'app/js/**/*.spec.js'
         ],
 
         // list of files to exclude
@@ -31,7 +31,7 @@ module.exports = function (config) {
 
         // test results reporter to use
         // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-        reporters: ['progress'],
+        reporters: ['progress', 'junit', 'dots', 'coverage', 'growl'],
 
         // web server port
         port: 9876,
@@ -41,7 +41,7 @@ module.exports = function (config) {
 
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_INFO,
+        logLevel: config.LOG_DEBUG,
 
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
@@ -64,8 +64,26 @@ module.exports = function (config) {
         singleRun: false,
 
         junitReporter : {
-            outputFile: 'test_out/unit.xml',
+            outputFile: '/karma-reports/junit-unit.xml',
             suite: 'unit'
+        },
+
+        // Source files, that you wanna generate coverage for
+        // Do not include tests or libraries - (these files will be instrumented by Istanbul)
+        preprocessors: {
+            'app/js/**/*.js': ['coverage']
+        },
+
+        // Configure the reporter
+        coverageReporter: {
+            reporters:[
+                {
+                    type: 'html',
+                    dir: '/karma-reports/coverage/html/'
+                }
+            ]
         }
+
+
     });
 };

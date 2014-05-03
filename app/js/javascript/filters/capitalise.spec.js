@@ -1,9 +1,10 @@
+'use strict';
 
-describe('Capitalise Filter spec', function() {
+describe('Capitalise Filter spec', function () {
 
     beforeEach(module('myApp.filters'));
 
-    it('Should capitalise values as expected', inject(function(capitaliseFilter) {
+    it('Should capitalise values as expected', inject(function (capitaliseFilter) {
         expect(capitaliseFilter).toBeDefined();
 
         // Edge cases
@@ -15,7 +16,7 @@ describe('Capitalise Filter spec', function() {
         expect(capitaliseFilter("_09( )*& ^% $£ @!")).toEqual("_09( )*& ^% $£ @!");
 
         // Can handle none String inputs
-        expect(capitaliseFilter( { some: 'Object' } )).toEqual("");
+        expect(capitaliseFilter({ some: 'Object' })).toEqual("");
 
         // Funky strings
         expect(capitaliseFilter("This Is Already Capitalised")).toEqual("This Is Already Capitalised");

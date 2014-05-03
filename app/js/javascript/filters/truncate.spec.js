@@ -1,9 +1,10 @@
+'use strict';
 
-describe('Truncate Filter spec', function() {
+describe('Truncate Filter spec', function () {
 
     beforeEach(module('myApp.filters'));
 
-    it('Should truncate values as expected', inject(function(truncateFilter) {
+    it('Should truncate values as expected', inject(function (truncateFilter) {
         expect(truncateFilter).toBeDefined();
         expect(truncateFilter("some very very long value", 10, "---")).toEqual("some ve---");
         expect(truncateFilter("some very very long value", 10)).toEqual("some ve...");

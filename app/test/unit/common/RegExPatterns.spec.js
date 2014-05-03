@@ -1,3 +1,5 @@
+'use strict';
+
 describe('RegExPatterns Tests', function() {
 
     beforeEach(module('myApp.common'));

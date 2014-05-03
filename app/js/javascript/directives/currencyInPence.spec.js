@@ -1,19 +1,21 @@
-describe('CurrencyInPence Directive Spec', function() {
+'use strict';
+
+describe('CurrencyInPence Directive Spec', function () {
 
     beforeEach(module('myApp.directives'));
 
     // Run test
-    describe('CurrencyInPence conversion tests', function(){
+    describe('CurrencyInPence conversion tests', function () {
 
         var $scope, $form, compiledForm;
 
         // Set the dom to manipulate
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             $scope = $rootScope;
             var element = angular.element(
-                '<form name="form">' +
+                    '<form name="form">' +
                     '<input type="number" ng-model="model.field" name="field" currency-in-pence/>' +
-                '</form>'
+                    '</form>'
             );
             $scope.model = { field: undefined }
             compiledForm = $compile(element)($scope);
@@ -22,14 +24,14 @@ describe('CurrencyInPence Directive Spec', function() {
         }));
 
         // Basic test setup verification
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             expect($form.field.$viewValue).toBe('')
 
             // Scope undefined due to failed regex
             expect($scope.model.field).toBeUndefined()
         }));
 
-        it('Should convert between pounds and pence', function() {
+        it('Should convert between pounds and pence', function () {
 
             // Set form INVALID
             $form.field.$setViewValue(null);
@@ -72,8 +74,7 @@ describe('CurrencyInPence Directive Spec', function() {
             expect($scope.model.field).toBe(0);
         });
 
-
-        it('Should not accept negative numbers as valid', function() {
+        it('Should not accept negative numbers as valid', function () {
 
             // Set form VALID
             $form.field.$setViewValue(11.99);
@@ -102,7 +103,7 @@ describe('CurrencyInPence Directive Spec', function() {
             expect($scope.model.field).toBeUndefined()
         });
 
-        it('Should not accept letters as valid', function() {
+        it('Should not accept letters as valid', function () {
 
             // Set form VALID
             $form.field.$setViewValue('ddd');

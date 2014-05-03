@@ -1,10 +1,11 @@
+'use strict';
 
-describe('Slice Filter spec', function() {
+describe('Slice Filter spec', function () {
 
     beforeEach(module('myApp.filters'));
 
     // Run test
-    it('Should return slice', inject(function(sliceFilter) {
+    it('Should return slice', inject(function (sliceFilter) {
         expect(sliceFilter).toBeDefined();
         expect(sliceFilter([], 0, 0)).toEqual([]);
         expect(sliceFilter(['a', 'b', 'c'], 0, 1)).toEqual(['a']);

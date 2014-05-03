@@ -1,21 +1,23 @@
-describe('HasError Directive Spec', function() {
+'use strict';
+
+describe('HasError Directive Spec', function () {
 
     beforeEach(module('myApp.directives'));
 
     // Run test
-    describe('HasError on single field only', function(){
+    describe('HasError on single field only', function () {
 
         var $scope, $form, compiledForm;
 
         // Set the dom to manipulate
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             $scope = $rootScope;
             var element = angular.element(
-                '<form name="form">' +
+                    '<form name="form">' +
                     '<div has-error="form.field">' +
-                        '<input ng-model="model.field" name="field" required ng-maxlength="5"/>' +
+                    '<input ng-model="model.field" name="field" required ng-maxlength="5"/>' +
                     '</div>' +
-                '</form>'
+                    '</form>'
             );
             $scope.model = { field: "abc" }
             compiledForm = $compile(element)($scope);
@@ -24,7 +26,7 @@ describe('HasError Directive Spec', function() {
         }));
 
         // Basic test setup verification
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             expect($form.field.$viewValue).toEqual("abc")
             expect($scope.model.field).toEqual("abc")
 
@@ -34,7 +36,7 @@ describe('HasError Directive Spec', function() {
             expect(compiledForm.find('div').hasClass('has-error')).toBe(false);
         }));
 
-        it('Should add error class when form is invalid', function() {
+        it('Should add error class when form is invalid', function () {
 
             // Set form value to be invalid
             $form.field.$setViewValue('invalid-length-string');
@@ -51,7 +53,7 @@ describe('HasError Directive Spec', function() {
             expect(compiledForm.find('div').hasClass('has-error')).toBe(true);
         });
 
-        it('Should remove error class when form element becomes valid', function() {
+        it('Should remove error class when form element becomes valid', function () {
 
             // Set form value to be invalid
             $form.field.$setViewValue('invalid-length-string');
@@ -66,22 +68,21 @@ describe('HasError Directive Spec', function() {
 
     });
 
-
     // Run test
-    describe('HasError on multiple field only', function(){
+    describe('HasError on multiple field only', function () {
 
         var $scope, $form, compiledForm;
 
         // Set the dom to manipulate
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             $scope = $rootScope;
             var element = angular.element(
-                '<form name="form">' +
+                    '<form name="form">' +
                     '<div has-error="[\'form.field_1\',\'form.field_2\']">' +
-                        '<input ng-model="model.field_1" name="field_1" required ng-maxlength="5"/>' +
-                        '<input ng-model="model.field_2" name="field_2" required ng-maxlength="5"/>' +
+                    '<input ng-model="model.field_1" name="field_1" required ng-maxlength="5"/>' +
+                    '<input ng-model="model.field_2" name="field_2" required ng-maxlength="5"/>' +
                     '</div>' +
-                '</form>'
+                    '</form>'
             );
             $scope.model = { field_1: "abc", field_2: "abc"  }
             compiledForm = $compile(element)($scope);
@@ -90,7 +91,7 @@ describe('HasError Directive Spec', function() {
         }));
 
         // Basic test setup verification
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             expect($form.field_1.$viewValue).toEqual("abc")
             expect($form.field_2.$viewValue).toEqual("abc")
             expect($scope.model.field_1).toEqual("abc")
@@ -105,7 +106,7 @@ describe('HasError Directive Spec', function() {
             expect(compiledForm.find('div').hasClass('has-error')).toBe(false);
         }));
 
-        it('Should remove error class when form element becomes valid', function() {
+        it('Should remove error class when form element becomes valid', function () {
 
             // Set form value to be invalid
             $form.field_1.$setViewValue('invalid-length-string');
@@ -127,6 +128,5 @@ describe('HasError Directive Spec', function() {
         });
 
     });
-
 
 });

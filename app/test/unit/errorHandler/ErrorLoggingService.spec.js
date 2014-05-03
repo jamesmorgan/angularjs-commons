@@ -1,3 +1,5 @@
+'use strict';
+
 describe('ErrorLoggingService', function() {
 
     beforeEach(module('myApp.exceptionHandler'));

@@ -1,15 +1,16 @@
+'use strict';
 
-describe('Character Count Directive', function(){
+describe('Character Count Directive', function () {
 
     beforeEach(module('myApp.directives'));
 
     var $scope, $form, compiledForm;
 
-    beforeEach(inject(function($compile, $rootScope) {
+    beforeEach(inject(function ($compile, $rootScope) {
         $scope = $rootScope;
         var element = angular.element(
-            '<input ng-model="model.field" name="field" ng-maxlength="20"/>' +
-            '<character-count count="20" field="model.field"></character-count>'
+                '<input ng-model="model.field" name="field" ng-maxlength="20"/>' +
+                '<character-count count="20" field="model.field"></character-count>'
         );
         $scope.model = {
             field: ""
@@ -19,12 +20,12 @@ describe('Character Count Directive', function(){
         $form = $scope.form;
     }));
 
-    beforeEach(inject(function($compile, $rootScope) {
+    beforeEach(inject(function ($compile, $rootScope) {
         expect($scope.model.field).toEqual("")
         expect(compiledForm[1].innerHTML).toEqual('20 characters left');
     }));
 
-    it('Should count character lengths', function() {
+    it('Should count character lengths', function () {
 
         // Set 9 character long length value
         $scope.model.field = "123456789";
@@ -34,7 +35,7 @@ describe('Character Count Directive', function(){
         expect(compiledForm[1].innerHTML).toEqual('11 characters left');
     });
 
-    it('Should determine if plural and singular character message', function() {
+    it('Should determine if plural and singular character message', function () {
 
         // Set 18 character long length value
         $scope.model.field = "123456789012345678";
@@ -49,8 +50,7 @@ describe('Character Count Directive', function(){
         expect(compiledForm[1].innerHTML).toEqual('1 character left');
     });
 
-
-    it('Should handle switching between valid and invalid character length', function() {
+    it('Should handle switching between valid and invalid character length', function () {
 
         // Set 19 character long length value
         $scope.model.field = "1234567890123456789";
@@ -71,7 +71,7 @@ describe('Character Count Directive', function(){
         expect(compiledForm[1].innerHTML).toEqual('0 characters left');
     });
 
-    it('Should show 0 characters left even if goes over the limit', function() {
+    it('Should show 0 characters left even if goes over the limit', function () {
 
         // Set 30 character long length value
         $scope.model.field = "123456789012345678901234567890";
@@ -82,17 +82,17 @@ describe('Character Count Directive', function(){
 
 });
 
-describe('Character Count Directive Error logging', function(){
+describe('Character Count Directive Error logging', function () {
 
     beforeEach(module('myApp.directives'));
 
     var $scope, $form, $log, compiledForm;
 
-    beforeEach(inject(function($compile, $rootScope, $injector) {
+    beforeEach(inject(function ($compile, $rootScope, $injector) {
         $scope = $rootScope;
         var element = angular.element(
-            '<input ng-model="model.field" name="field" ng-maxlength="20"/>' +
-            '<character-count></character-count>'
+                '<input ng-model="model.field" name="field" ng-maxlength="20"/>' +
+                '<character-count></character-count>'
         );
         $scope.model = {
             field: ""
@@ -103,7 +103,7 @@ describe('Character Count Directive Error logging', function(){
         $form = $scope.form;
     }));
 
-    it('Should log error if not count and model set', function() {
+    it('Should log error if not count and model set', function () {
         compiledForm.scope().$apply();
         expect($log.error.logs[0][0]).toEqual("No length attribute specified");
         expect($log.error.logs[1][0]).toEqual("No field attribute specified");

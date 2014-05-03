@@ -1,20 +1,22 @@
-describe('IsRequired Directive Spec', function() {
+'use strict';
+
+describe('IsRequired Directive Spec', function () {
 
     beforeEach(module('myApp.directives'));
 
     // Run test
-    describe('IsRequired on Single Field', function(){
+    describe('IsRequired on Single Field', function () {
 
         var $scope, $form, compiledForm;
 
         // Set the dom to manipulate
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             $scope = $rootScope;
             var element = angular.element(
-                '<form name="form">' +
+                    '<form name="form">' +
                     '<label for="field" is-required="form.field">Field Label</label>' +
                     '<input type="text" ng-model="model.field" name="field" required/>' +
-                '</form>'
+                    '</form>'
             );
             $scope.model = { field: "" }
             compiledForm = $compile(element)($scope);
@@ -23,7 +25,7 @@ describe('IsRequired Directive Spec', function() {
         }));
 
         // Basic test setup verification
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             expect($form.field.$viewValue).toBeUndefined()
             expect($scope.model.field).toBe("");
 
@@ -36,7 +38,7 @@ describe('IsRequired Directive Spec', function() {
             expect(compiledForm.find('label')[0].innerHTML).toBe("Field Label *");
         }));
 
-        it('Should show and hide asterisk depending on value set and required flag', function() {
+        it('Should show and hide asterisk depending on value set and required flag', function () {
 
             // Set form value to be VALID
             $form.field.$setViewValue('some valid value');
@@ -70,19 +72,19 @@ describe('IsRequired Directive Spec', function() {
     });
 
     // Run test
-    describe('IsRequired on Multiple Fields', function(){
+    describe('IsRequired on Multiple Fields', function () {
 
         var $scope, $form, compiledForm;
 
         // Set the dom to manipulate
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             $scope = $rootScope;
             var element = angular.element(
-                '<form name="form">' +
+                    '<form name="form">' +
                     '<label for="field" is-required="[\'form.field_1\',\'form.field_2\']">Field Label</label>' +
                     '<input ng-model="model.field_1" name="field_1" required/>' +
                     '<input ng-model="model.field_2" name="field_2" required/>' +
-                '</form>'
+                    '</form>'
             );
             $scope.model = { field_1: "", field_2: "" }
             compiledForm = $compile(element)($scope);
@@ -91,7 +93,7 @@ describe('IsRequired Directive Spec', function() {
         }));
 
         // Basic test setup verification
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
 
             expect($form.field_1.$viewValue).toBeUndefined()
             expect($form.field_2.$viewValue).toBeUndefined()
@@ -112,7 +114,7 @@ describe('IsRequired Directive Spec', function() {
             expect(compiledForm.find('label')[0].innerHTML).toBe("Field Label *");
         }));
 
-        it('Should show and hide asterisk depending on value set and required flag', function() {
+        it('Should show and hide asterisk depending on value set and required flag', function () {
 
             // Set form value to be VALID
             $form.field_1.$setViewValue('some valid value');
@@ -159,21 +161,20 @@ describe('IsRequired Directive Spec', function() {
 
     });
 
-
     // Run test
-    describe('IsRequired on Multiple Fields', function(){
+    describe('IsRequired on Multiple Fields', function () {
 
         var $scope, $form, $log, compiledForm;
 
         // Set the dom to manipulate
-        beforeEach(inject(function($compile, $rootScope, $injector) {
+        beforeEach(inject(function ($compile, $rootScope, $injector) {
             $scope = $rootScope;
             $log = $injector.get('$log');
             var element = angular.element(
-                '<form name="form">' +
+                    '<form name="form">' +
                     '<label for="field" is-required="form.field_1"></label>' +
                     '<input ng-model="model.field_1" name="field_1" required/>' +
-                '</form>'
+                    '</form>'
             );
             $scope.model = { field_1: "" }
             compiledForm = $compile(element)($scope);
@@ -181,12 +182,11 @@ describe('IsRequired Directive Spec', function() {
             $form = $scope.form;
         }));
 
-        it('Should log error as no html found in label contents', function() {
+        it('Should log error as no html found in label contents', function () {
             // The test
             expect($log.error.logs[0][0]).toEqual('IsRequired : No label value found for form.field_1');
         });
 
     });
-
 
 });

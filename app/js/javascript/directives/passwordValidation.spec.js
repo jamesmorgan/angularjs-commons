@@ -1,19 +1,21 @@
-describe('Password Directive Spec', function() {
+'use strict';
+
+describe('Password Directive Spec', function () {
 
     beforeEach(module('myApp.directives'));
 
     // Run test
-    describe('Password validation tests', function(){
+    describe('Password validation tests', function () {
 
         var $scope, $form, compiledForm;
 
         // Set the dom to manipulate
-        beforeEach(inject(function($compile, $rootScope) {
+        beforeEach(inject(function ($compile, $rootScope) {
             $scope = $rootScope;
             var element = angular.element(
-                '<form name="form">' +
+                    '<form name="form">' +
                     '<input type="password" ng-model="model.field" name="field" password-validation/>' +
-                '</form>'
+                    '</form>'
             );
             $scope.model = { field: '' }
             compiledForm = $compile(element)($scope);

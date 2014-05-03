@@ -7,7 +7,7 @@
     directivesModule.directive('errorSpan', function ($log, FormErrorMessages) {
         return {
             restrict: 'E',
-            replace:  true,
+            replace: true,
             scope: true,
             template: '<span class="help-block" ng-show="showError">{{errorMessage}}</span>',
             link: function (scope, element, attrs) {

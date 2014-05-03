@@ -32,7 +32,7 @@
              * Directives *
              **************/
 
-            //noinspection JSUnusedGlobalSymbols
+                //noinspection JSUnusedGlobalSymbols
             this.password = { value: "pa33worD" };
 
             //noinspection JSUnusedGlobalSymbols
