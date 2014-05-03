@@ -175,6 +175,17 @@
 <script src="js/javascript/directives/forms/hasError.js"></script>
 <script src="js/javascript/directives/forms/isRequired.js"></script>
 
+<script type="application/javascript">
+    var currentWindowOnload = window.onload;
+
+    window.onload = function() {
+        if (currentWindowOnload) {
+            currentWindowOnload();
+        }
+        htmlReporter.initialize();
+        env.execute();
+    };
+</script>
 
 </body>
 </html>
