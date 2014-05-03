@@ -2,7 +2,9 @@
     "use strict";
 
     /**
+     * The directive adds the ability to show error spans for a given form field
      *
+     * The Directive also follows a convention for displaying errors messages based on a mapping file defined in Config.js
      */
     directivesModule.directive('errorSpan', function ($log, FormErrorMessages) {
         return {

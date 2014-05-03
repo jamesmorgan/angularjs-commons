@@ -12,7 +12,7 @@
     }
 
     /**
-     *
+     * Defines ngMin values of a input field, setting a error flag if invalid
      */
     directivesModule.directive('ngMin', function () {
         return {
@@ -37,7 +37,7 @@
     });
 
     /**
-     *
+     * Defines ngMax values of a input field, setting a error flag if invalid
      */
     directivesModule.directive('ngMax', function () {
         return {

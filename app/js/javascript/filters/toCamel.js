@@ -2,7 +2,7 @@
     "use strict";
 
     /**
-     *
+     * Camel cases the provided string
      */
     filtersModule.filter('toCamel', function () {
         return function (value) {

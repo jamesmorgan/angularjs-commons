@@ -2,7 +2,7 @@
     "use strict";
 
     /**
-     *
+     * Used to demonstrate username validation
      */
     directivesModule.directive('uniqueUsername', function ($log, UserService) {
         return {
@@ -24,7 +24,6 @@
                 elm.bind('keyup', function () {
                     validationFunction(ctrl.$modelValue);
                 });
-
             }
         };
     });

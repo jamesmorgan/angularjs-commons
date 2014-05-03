@@ -2,7 +2,7 @@
     "use strict";
 
     /**
-     *
+     * Upper cases the provided string
      */
     filtersModule.filter('toUpper', function () {
         return function (value) {

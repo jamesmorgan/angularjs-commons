@@ -2,7 +2,7 @@
     "use strict";
 
     /**
-     *
+     * Lower cases the provided string
      */
     filtersModule.filter('toLower', function () {
         return function (value) {
