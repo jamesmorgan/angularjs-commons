@@ -133,46 +133,67 @@
                         <input type="url" class="form-control" id="inputUrl" name="inputUrl" placeholder="Type in a url..."
                                ng-model="mc.hasErrorTestForm.value">
                     </div>
-                    <!--<div class="col-sm-11 col-sm-offset-1">-->
-                        <!--<span ng-show="hasErrorTestForm.$invalid">-->
-                            <!--<i class="glyphicon glyphicon-ban-circle"></i> Invalid URL-->
-                        <!--</span>-->
-                    <!--</div>-->
                 </div>
             </form>
         </p>
         <p>
-            <div hljs language="html"><div class="form-group" has-error="form.fieldUrl"><input type="url" name="fieldUrl" id="fieldUrl" required></div></div>
+        <br />
+            <div hljs language="html">
+<div class="form-group" has-error="form.fieldUrl"><input type="url" name="fieldUrl" id="fieldUrl" required></div>
+            </div>
         </p>
     </div>
 
     <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-        <p></p>
+        <h2>Required Field Marker</h2>
+        <p>Used to highlight a field is required by adding (*)</p>
+        <p>This could be customised further by using CSS</p>
         <p>
+            <pre>{{ mc.isRequired.value }}</pre>
         </p>
         <p>
+            <form name="isRequiredForm">
+                <label for="isRequiredText" class="col-sm-3 control-label" is-required="isRequiredForm.isRequiredText">Label</label>
+                <div class="col-sm-9">
+                    <input type="text" id="isRequiredText" name="isRequiredText" class="form-control" placeholder="I'm a required..."
+                           ng-model="mc.isRequired.value" required />
+                </div>
+            </form>
         </p>
         <p>
+<div hljs language="html">
+<label for="lbl_formField" is-required="form.field">Label</label>
+</div>
         </p>
-        <div hljs language="html">
-
-        </div>
     </div>
 
     <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-        <p></p>
+        <h2>Error Span</h2>
+        <p>Used to highlight a field has an error</p>
+        <p>Can be customised to with css</p>
+        <p>Below has the following constraints <code>ng-minlength="5" ng-maxlength="10" required</code> </p>
         <p>
+            <pre>{{ mc.errorSpan.value }}</pre>
         </p>
         <p>
+            <form name="errorSpanForm">
+                <div class="form-group" has-error="errorSpanForm.errorSpanValue">
+                        <label for="isRequiredText" class="col-sm-3 control-label" is-required="errorSpanForm.errorSpanValue">Label</label>
+                        <div class="col-sm-9">
+                            <input type="text" id="errorSpanValue" name="errorSpanValue" class="form-control" ng-model="mc.errorSpan.value"
+                                   ng-minlength="5" ng-maxlength="10" required/>
+                            <error-span for='errorSpanForm.errorSpanValue' type="required"></error-span>
+                            <error-span for='errorSpanForm.errorSpanValue' type="minlength"></error-span>
+                            <error-span for='errorSpanForm.errorSpanValue' type="maxlength"></error-span>
+                        </div>
+                </div>
+            </form>
         </p>
         <p>
+<div hljs language="html">
+<error-span for='errorSpanForm.errorSpanValue' type="maxlength"></error-span>
+</div>
         </p>
-        <div hljs language="html">
-
-        </div>
     </div>
+
 </div>

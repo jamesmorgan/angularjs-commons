@@ -22,4 +22,4 @@
             return text.substring(0, length - end.length) + end;
         };
     });
-})();
+}());
