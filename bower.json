@@ -16,6 +16,6 @@
     "fontawesome": "~4.0.3"
   },
   "resolutions": {
-    "angular": "1.2.14"
+    "angular": "1.2.16"
   }
 }

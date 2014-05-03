@@ -1,9 +1,9 @@
 {
-  "name": "angular-utils",
+  "name": "angularjs-commons",
   "private": true,
   "version": "0.0.1",
   "description": "A project for common AngularJS scripts",
-  "repository": "https://github.com/jamesmorgan/angular-utils",
+  "repository": "https://github.com/jamesmorgan/angularjs-commons",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
