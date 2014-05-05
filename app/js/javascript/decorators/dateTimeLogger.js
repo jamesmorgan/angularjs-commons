@@ -19,7 +19,7 @@
              * @param logFn the log function to decorate
              * @param args the args of the calling log
              */
-            var enhanceLog = function(logFn, args) {
+            var enhanceLog = function (logFn, args) {
                 var now = moment().format('MMMM Do YYYY, h:mm:ss a');
 
                 if (args[0] instanceof Error) {
