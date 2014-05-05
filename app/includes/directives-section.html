@@ -67,7 +67,7 @@
             </textarea>
             <character-count count="100" field="mc.characterCount.value"></character-count>
         </p>
-        <div hljs language="html"><input type="text" ng-model="model.value"/><character-count count="20" field="model.value"></character-count></div>
+        <div hljs language="html"><character-count count="20" field="model.value"></character-count></div>
     </div>
 
     <div class="col-md-4">
@@ -126,45 +126,38 @@
             <pre>{{ mc.hasErrorTestForm.value }}</pre>
         </p>
         <p>
-            <form name="hasErrorTestForm">
-                <div class="form-group" has-error="hasErrorTestForm.inputUrl">
-                    <label for="inputUrl" class="col-sm-1 control-label">Url</label>
-                    <div class="col-sm-11">
+            <form name="hasErrorTestForm" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="inputUrl" class="col-sm-3 control-label">Url</label>
+                    <div class="col-sm-9">
                         <input type="url" class="form-control" id="inputUrl" name="inputUrl" placeholder="Type in a url..."
                                ng-model="mc.hasErrorTestForm.value">
                     </div>
                 </div>
             </form>
         </p>
-        <p>
-        <br />
-            <div hljs language="html">
-<div class="form-group" has-error="form.fieldUrl"><input type="url" name="fieldUrl" id="fieldUrl" required></div>
-            </div>
-        </p>
+        <div hljs language="html"><div class="form-group" has-error="form.fieldUrl"></div></div>
     </div>
 
     <div class="col-md-4">
         <h2>Required Field Marker</h2>
-        <p>Used to highlight a field is required by adding (*)</p>
+        <p>Used to highlight a field is required by adding (<strong>*</strong>)</p>
         <p>This could be customised further by using CSS</p>
         <p>
             <pre>{{ mc.isRequired.value }}</pre>
         </p>
         <p>
-            <form name="isRequiredForm">
-                <label for="isRequiredText" class="col-sm-3 control-label" is-required="isRequiredForm.isRequiredText">Label</label>
-                <div class="col-sm-9">
-                    <input type="text" id="isRequiredText" name="isRequiredText" class="form-control" placeholder="I'm a required..."
-                           ng-model="mc.isRequired.value" required />
+            <form name="isRequiredForm" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="isRequiredText" class="col-sm-3 control-label" is-required="isRequiredForm.isRequiredText">Label</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="isRequiredText" name="isRequiredText" placeholder="I'm required..."
+                               ng-model="mc.isRequired.value" required>
+                    </div>
                 </div>
             </form>
         </p>
-        <p>
-<div hljs language="html">
-<label for="lbl_formField" is-required="form.field">Label</label>
-</div>
-        </p>
+        <div hljs language="html"><label for="lbl_formField" is-required="form.field">Label</label></div>
     </div>
 
     <div class="col-md-4">
@@ -176,23 +169,21 @@
             <pre>{{ mc.errorSpan.value }}</pre>
         </p>
         <p>
-            <form name="errorSpanForm">
+            <form name="errorSpanForm" class="form-horizontal" role="form">
                 <div class="form-group" has-error="errorSpanForm.errorSpanValue">
-                        <label for="isRequiredText" class="col-sm-3 control-label" is-required="errorSpanForm.errorSpanValue">Label</label>
-                        <div class="col-sm-9">
-                            <input type="text" id="errorSpanValue" name="errorSpanValue" class="form-control" ng-model="mc.errorSpan.value"
-                                   ng-minlength="5" ng-maxlength="10" required/>
-                            <error-span for='errorSpanForm.errorSpanValue' type="required"></error-span>
-                            <error-span for='errorSpanForm.errorSpanValue' type="minlength"></error-span>
-                            <error-span for='errorSpanForm.errorSpanValue' type="maxlength"></error-span>
-                        </div>
+                    <label for="isRequiredText" class="col-sm-3 control-label" is-required="errorSpanForm.errorSpanValue">Label</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="errorSpanValue" name="errorSpanValue" placeholder="I'm required..."
+                               ng-minlength="5" ng-maxlength="10" ng-model="mc.errorSpan.value" required>
+                        <error-span for='errorSpanForm.errorSpanValue' type="required"></error-span>
+                        <error-span for='errorSpanForm.errorSpanValue' type="minlength"></error-span>
+                        <error-span for='errorSpanForm.errorSpanValue' type="maxlength"></error-span>
+                    </div>
                 </div>
             </form>
         </p>
         <p>
-<div hljs language="html">
-<error-span for='errorSpanForm.errorSpanValue' type="maxlength"></error-span>
-</div>
+        <div hljs language="html"><error-span for='errorSpanForm.errorSpanValue' type="maxlength"></error-span></div>
         </p>
     </div>
 
