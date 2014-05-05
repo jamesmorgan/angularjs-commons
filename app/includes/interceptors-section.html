@@ -5,7 +5,12 @@
             Logs out all HTTP requests and responses made by Angular's <code>$http</code> service
         </p>
         <p>
-            <button type="button" class="btn btn-primary btn active" ng-click="mc.triggerHttpCall()">Trigger HTTP Call</button>
+            <div class="form-group">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="httpInterceptorValue" ng-model="mc.httpInterceptor.value" required>
+                </div>
+                <button type="button" class="btn btn-primary" ng-click="mc.triggerHttpCall(mc.httpInterceptor.value)">Trigger HTTP Call</button>
+            </div>
         </p>
         <p>Open the console to view request and responses</p>
         <p>

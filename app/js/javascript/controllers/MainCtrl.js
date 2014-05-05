@@ -83,8 +83,12 @@
              * Interceptors *
              ****************/
 
-            this.triggerHttpCall = function () {
-                TestHttpService.getGoogle();
+            this.httpInterceptor = {
+                value: "http://www.google.com"
+            };
+
+            this.triggerHttpCall = function (url) {
+                TestHttpService.getUrl(url);
             };
 
             /**************

@@ -10,5 +10,9 @@
             $http.get("http://www.google.com");
         };
 
+        this.getUrl = function (url) {
+            $http.get(url);
+        };
+
     });
 }());
