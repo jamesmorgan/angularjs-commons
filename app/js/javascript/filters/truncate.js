@@ -13,7 +13,7 @@
     filtersModule.filter('truncate', function () {
         return function (text, length, end) {
             end = end || "...";
-            if (text === undefined) {
+            if (text === undefined || text === null) {
                 return "";
             }
             if (text.length <= length || (text.length - end.length <= length)) {
