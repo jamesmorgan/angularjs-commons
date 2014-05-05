@@ -11,6 +11,7 @@ var MODULES = [
     'myApp.directives',
     'myApp.controllers',
     'myApp.errorHandler',
+    'myApp.logger',
     'myApp.httpDecorator'
 ];
 
@@ -34,4 +35,5 @@ var servicesModule = angular.module('myApp.services', []);
 var directivesModule = angular.module('myApp.directives', ['myApp.config']);
 var controllersModule = angular.module('myApp.controllers', []);
 var errorHandler = angular.module('myApp.errorHandler', []);
+var dateTimeLogger = angular.module('myApp.logger', []);
 var loggingHttpInterceptor = angular.module('myApp.httpDecorator', []);

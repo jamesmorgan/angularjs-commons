@@ -57,11 +57,26 @@
              * Decorators *
              **************/
 
-                //noinspection JSUnusedGlobalSymbols
             this.errorHandler = { errors: TestErrorHandlingService.errors };
 
             this.triggerError = function () {
                 UserService.throwError(TestErrorHandlingService.errors.length);
+            };
+
+            this.logDebug = function () {
+                $log.debug("Logging Debug");
+            };
+
+            this.logInfo = function () {
+                $log.info("Logging Info");
+            };
+
+            this.logWarn = function () {
+                $log.warn("Logging Warn");
+            };
+
+            this.logError = function () {
+                $log.error("Logging Error");
             };
 
             /****************

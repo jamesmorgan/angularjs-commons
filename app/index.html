@@ -136,6 +136,10 @@
 
 <script src="../bower_components/angular-highlightjs/angular-highlightjs.js"></script>
 <script src="../bower_components/highlightjs/highlight.pack.js"></script>
+<script src="../bower_components/momentjs/min/moment-with-langs.js"></script>
+<script> moment().format(); </script>
+
+<script src="js/javascript/common/extensions.js"></script>
 
 <script src="js/app.js"></script>
 
@@ -143,6 +147,7 @@
 <script src="js/javascript/common/config.js"></script>
 
 <!-- Decorators -->
+<script src="js/javascript/decorators/dateTimeLogger.js"></script>
 <script src="js/javascript/decorators/exceptionHandler.js"></script>
 
 <!-- Interceptors -->
@@ -152,7 +157,6 @@
 <script src="js/javascript/controllers/MainCtrl.js"></script>
 
 <!-- Services -->
-
 <script src="js/javascript/services/UserService.js"></script>
 <script src="js/javascript/services/TestErrorHandlingService.js"></script>
 <script src="js/javascript/services/TestHttpService.js"></script>
@@ -186,6 +190,13 @@
 <!-- Jasmine boot.js -->
 <script src="js/jasmine/boot.js"></script>
 <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+
+<!-- Decorators -->
+<script src="js/javascript/decorators/dateTimeLogger.spec.js"></script>
+<script src="js/javascript/decorators/exceptionHandler.spec.js"></script>
+
+<!-- Interceptors -->
+<script src="js/javascript/interceptors/loggingHttpInterceptor.spec.js"></script>
 
 <!-- Filters -->
 <script src="js/javascript/filters/capitalise.spec.js"></script>
