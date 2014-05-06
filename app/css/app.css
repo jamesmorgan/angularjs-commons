@@ -9,8 +9,8 @@ body {
 }
 
 .mini-pre {
-    height: auto;
-    max-height: 150px;
+    height: 250px;
+    max-height: 250px;
     overflow: auto;
     background-color: #eeeeee;
     word-break: normal !important;

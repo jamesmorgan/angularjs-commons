@@ -9,7 +9,7 @@
             Total Errors Logged : {{ mc.errorHandler.errors.length }}
         </p>
         <p>Open the console to view the error</p>
-        <p><pre class="mini-pre">{{mc.errorHandler.errors[mc.errorHandler.errors.length-1]}}</pre></p>
+        <p><pre class="mini-pre">{{mc.errorHandler.errors[mc.errorHandler.errors.length-1] | json}}</pre></p>
     </div>
     <div class="col-md-4">
         <h2>Logging Decorator</h2>
